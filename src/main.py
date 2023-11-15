@@ -1,6 +1,35 @@
 from node.node import * 
 from stack.stack import *
 from stack.balancedparens import *
+from stack.calculator import *
+from stack.serialsearch import*
+
+def testSerialSearch():
+    # create an empty stack
+    s = stack()
+    # initialize first
+
+    # initialize size
+
+    # initialize target
+
+    # push -7 onto the top of the stack
+
+    # push 42 onto the top of the stack
+
+    # push 70 onto the top of the stack
+
+    # push 39 onto the top of the stack
+
+    # push 3 onto the top of the stack
+
+    # push 63 onto the top of the stack
+
+    # push 8 onto the top of the stack
+
+    # print the stack
+
+    # call serial search method and display its return.
 
 def main():
     # testInit()
@@ -17,10 +46,14 @@ def main():
     # testPop()
     # testIsEmpty()
     # testPeek()
-    print("Parenthesis are balanced?", balancedparens.isBalanced("{X+Y"))   # False
-    print("Parenthesis are balanced?", balancedparens.isBalanced("{X+Y)"))   # False 
-    print("Parenthesis are balanced?", balancedparens.isBalanced("({X+Y}*Z)"))   # True
-    print("Parenthesis are balanced?", balancedparens.isBalanced("[A+B]*({X+Y}*Z)"))    # True
+    # print("Parenthesis are balanced?", balancedparens.isBalanced("{X+Y"))   # False
+    # print("Parenthesis are balanced?", balancedparens.isBalanced("{X+Y)"))   # False 
+    # print("Parenthesis are balanced?", balancedparens.isBalanced("({X+Y}*Z)"))   # True
+    # print("Parenthesis are balanced?", balancedparens.isBalanced("[A+B]*({X+Y}*Z)"))    # True
+    print("(((6+9)/3)*(6-4)) = ", calculator.evaluate("(((6+9)/3)*(6-4))"))
+    print("(6+(3*(6-4))) = ", calculator.evaluate("(6+(3*(6-4)))"))
+    print("((5+2)-(3*(6/9))) = ", calculator.evaluate("((5+2)-(3*(6/9)))"))
+    print("((5*2)-(3*(6/2))) = ", calculator.evaluate("((5*2)-(3*(6/2)))"))
 
 def testPeek():
     print("Testing Peek method in stack class")
