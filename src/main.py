@@ -3,33 +3,7 @@ from stack.stack import *
 from stack.balancedparens import *
 from stack.calculator import *
 from stack.serialsearch import*
-
-def testSerialSearch():
-    # create an empty stack
-    s = stack()
-    # initialize first
-
-    # initialize size
-
-    # initialize target
-
-    # push -7 onto the top of the stack
-
-    # push 42 onto the top of the stack
-
-    # push 70 onto the top of the stack
-
-    # push 39 onto the top of the stack
-
-    # push 3 onto the top of the stack
-
-    # push 63 onto the top of the stack
-
-    # push 8 onto the top of the stack
-
-    # print the stack
-
-    # call serial search method and display its return.
+from stack.insertionsort import *
 
 def main():
     # testInit()
@@ -50,10 +24,43 @@ def main():
     # print("Parenthesis are balanced?", balancedparens.isBalanced("{X+Y)"))   # False 
     # print("Parenthesis are balanced?", balancedparens.isBalanced("({X+Y}*Z)"))   # True
     # print("Parenthesis are balanced?", balancedparens.isBalanced("[A+B]*({X+Y}*Z)"))    # True
-    print("(((6+9)/3)*(6-4)) = ", calculator.evaluate("(((6+9)/3)*(6-4))"))
-    print("(6+(3*(6-4))) = ", calculator.evaluate("(6+(3*(6-4)))"))
-    print("((5+2)-(3*(6/9))) = ", calculator.evaluate("((5+2)-(3*(6/9)))"))
-    print("((5*2)-(3*(6/2))) = ", calculator.evaluate("((5*2)-(3*(6/2)))"))
+    # print("(((6+9)/3)*(6-4)) = ", calculator.evaluate("(((6+9)/3)*(6-4))"))
+    # print("(6+(3*(6-4))) = ", calculator.evaluate("(6+(3*(6-4)))"))
+    # print("((5+2)-(3*(6/9))) = ", calculator.evaluate("((5+2)-(3*(6/9)))"))
+    # print("((5*2)-(3*(6/2))) = ", calculator.evaluate("((5*2)-(3*(6/2)))"))
+    testInsertionSort(1)
+    testInsertionSort(4)
+    testInsertionSort(6)
+    
+
+def testInsertionSort(first):
+    # create an empty stack
+    stack_to_sort = stack()
+
+    # push elements onto the top of the stack
+    stack_to_sort.push(-7)
+    stack_to_sort.push(42)
+    stack_to_sort.push(70)
+    stack_to_sort.push(39)
+    stack_to_sort.push(3)
+    stack_to_sort.push(63)
+    stack_to_sort.push(8)
+
+    # print unsorted stack
+    print(f"Unsorted stack: {stack_to_sort}")
+
+    # call insertion sort method
+    insertionsort(stack_to_sort, first)
+
+    # print sorted stack
+    print(f"Sorted stack: {stack_to_sort}")
+    print()
+
+# Test with different values of 'first'
+for first in [1, 4, 6]:
+    print(f"Output when first={first}")
+    testInsertionSort(first)
+
 
 def testPeek():
     print("Testing Peek method in stack class")

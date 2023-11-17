@@ -137,3 +137,7 @@ class stack:
         else:
             # return data in node at the head (top) of the calling stack
             return self.__head.getData()
+        
+    def __len__(self):
+        """Return the size of the stack."""
+        return self.__manyNodes

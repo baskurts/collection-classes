@@ -221,4 +221,41 @@ class node:
             copyTail = copyTail.getLink()
 
         # return copy head
-        return [copyHead, copyTail]            
+        return [copyHead, copyTail]
+    
+    def setDataAtPosition(self, position: int, data):
+        """Sets the data value stored in the node at the specified position 
+        to the specified data value.
+
+        Args:
+            position (int): specified position
+            data: specified data value
+
+        Raises:
+            ValueError: indicates position is less than one
+        """        
+        cursor = self   # used to step through calling node
+        i = 1           # used to count nodes
+
+        try:       
+            # if position is less than one, raise error   
+            if (position < 1):
+                raise ValueError("Position may not be less than 1.")
+        except ValueError as e:
+            # display error and exit
+            print(e)
+            return
+
+        # move cursor forward the correct number of nodes
+        while ((i < position) and (cursor != None)):
+            # move cursor to next node
+            cursor = cursor.getLink()
+            # increment counter
+            i += 1
+
+        if cursor is None:
+            print("Position exceeds the length of the list.")
+        else:
+            # set data value in node cursor refers to
+            cursor.setData(data)
+                
