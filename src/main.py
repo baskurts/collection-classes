@@ -4,6 +4,7 @@ from stack.balancedparens import *
 from stack.calculator import *
 from stack.serialsearch import*
 from stack.insertionsort import *
+from queue.queue import *
 
 def main():
     # testInit()
@@ -28,10 +29,42 @@ def main():
     # print("(6+(3*(6-4))) = ", calculator.evaluate("(6+(3*(6-4)))"))
     # print("((5+2)-(3*(6/9))) = ", calculator.evaluate("((5+2)-(3*(6/9)))"))
     # print("((5*2)-(3*(6/2))) = ", calculator.evaluate("((5*2)-(3*(6/2)))"))
-    testInsertionSort(1)
-    testInsertionSort(4)
-    testInsertionSort(6)
+    # testInsertionSort(1)
+    # testInsertionSort(4)
+    # testInsertionSort(6)
+    test_enqueue()
+    test_dequeue()
+    test_isEmpty()
+    test_peek()
     
+def test_enqueue():
+    q = queue()
+    q.enqueue(10)
+    q.enqueue(20)
+    (q.getData(), "10 20")
+
+def test_dequeue():
+    q = queue()
+    q.enqueue(30)
+    q.enqueue(40)
+    (q.dequeue(), 30)
+    (q.getData(), "40")
+
+def test_isEmpty():
+    q = queue()
+    (q.isEmpty())
+    q.enqueue(50)
+    (q.isEmpty())
+
+def test_peek():
+    q = queue()
+    q.enqueue(60)
+    q.enqueue(70)
+    (q.peek(), 60)
+
+
+
+
 
 def testInsertionSort(first):
     # create an empty stack
