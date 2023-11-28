@@ -4,7 +4,8 @@ from stack.balancedparens import *
 from stack.calculator import *
 from stack.serialsearch import*
 from stack.insertionsort import *
-from queue.queue import *
+from queues.queue import *
+from queues.palindrome import * 
 
 def main():
     # testInit()
@@ -32,10 +33,19 @@ def main():
     # testInsertionSort(1)
     # testInsertionSort(4)
     # testInsertionSort(6)
-    test_enqueue()
-    test_dequeue()
-    test_isEmpty()
-    test_peek()
+    # test_enqueue()
+    # test_dequeue()
+    # test_isEmpty()
+    # test_peek()
+    testIsPalindrome()
+
+def testIsPalindrome():
+    exp = input("Please enter an expression: ")
+
+    if (palindrome.isPalindrome(exp)):
+        print("Your expression is a palindrome")
+    else:
+        print("Your expression is not a problem")
     
 def test_enqueue():
     q = queue()
