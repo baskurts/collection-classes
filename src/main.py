@@ -37,8 +37,26 @@ def main():
     # test_dequeue()
     # test_isEmpty()
     # test_peek()
-    testIsPalindrome()
+    # testIsPalindrome()
+    testPalindromePractice()
 
+def testPalindromePractice():
+    exp = input("Please enter an expression: ")
+
+    while exp != '':
+
+        if(palindrome.isPalindrome(exp)):
+            print("Your expression is a palindrome")
+
+        else:
+            print("Your expression is not a problem")
+
+        if (exp == ""):
+            break
+        
+        exp = input("Please enter an expression: ")
+
+        
 def testIsPalindrome():
     exp = input("Please enter an expression: ")
 
