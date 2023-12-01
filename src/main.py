@@ -6,6 +6,7 @@ from stack.serialsearch import*
 from stack.insertionsort import *
 from queues.queue import *
 from queues.palindrome import * 
+from queues.palindromeassignment import *
 
 def main():
     # testInit()
@@ -38,7 +39,23 @@ def main():
     # test_isEmpty()
     # test_peek()
     # testIsPalindrome()
-    testPalindromePractice()
+    # testPalindromePractice()
+    testPalindromeAssignment()
+
+def testPalindromeAssignment():
+    while True:
+        exp = input("Please enter an expression (or press enter to exit): ")
+        if exp == '':
+            print("Thanks!")
+            break
+
+        is_palindrome, a4 = palindromeassignment.isPalindrome(exp)
+
+        if is_palindrome:
+            print("Your expression is a palindrome.")
+        else:
+            print("Your expression is not a palindrome.")
+            print("Mismatch detected at: ", a4)
 
 def testPalindromePractice():
     exp = input("Please enter an expression: ")
