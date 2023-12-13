@@ -7,6 +7,8 @@ from stack.insertionsort import *
 from queues.queue import *
 from queues.palindrome import * 
 from queues.palindromeassignment import *
+from recursion import *
+from loops import *
 
 def main():
     # testInit()
@@ -40,7 +42,71 @@ def main():
     # test_peek()
     # testIsPalindrome()
     # testPalindromePractice()
-    testPalindromeAssignment()
+    # testPalindromeAssignment()
+    santaClaus()
+    getPalindromes()
+    testRecursion()
+
+def testRecursion():
+    print("Final Exam Recursion")
+
+    print("LOOP")
+    loops.evens(-10, 10)
+    print("")
+    print("RECURSION")
+    recursion.evens(-10, 10)
+
+def getPalindromes():
+    palindrome_stack = stack()
+    non_palindrome_stack = stack()
+
+    words = input("Enter ten words separated by a space: ").split()
+
+    for word in words:
+        if palindrome.isPalindrome(word): 
+            palindrome_stack.push(word)
+        else:
+            non_palindrome_stack.push(word)
+
+    
+    temp_stack = stack()
+    
+    print("These words are palindromes:", end=" ")
+    while not palindrome_stack.isEmpty():
+        temp_stack.push(palindrome_stack.pop())
+    while not temp_stack.isEmpty():
+        print(temp_stack.pop(), end=" ")
+
+    print("\nThese words are not palindromes:", end=" ")
+    while not non_palindrome_stack.isEmpty():
+        temp_stack.push(non_palindrome_stack.pop())
+    while not temp_stack.isEmpty():
+        print(temp_stack.pop(), end=" ")
+
+def santaClaus():
+    s = node('S', None)
+    s.addNodeAfter('A')
+    s.addNodeAfter('N')
+    s.addNodeAfter('T')
+    s.addNodeAfter('A')
+
+
+    c = node('C', None)
+    c.addNodeAfter('L')
+    c.addNodeAfter('A')
+    c.addNodeAfter('U')
+    c.addNodeAfter('S')
+
+
+    selection = s
+
+    selection = selection.getLink()
+    selection = selection.getLink()
+    selection = selection.getLink()
+    selection = selection.getLink()
+
+    selection.setLink(c)
+
 
 def testPalindromeAssignment():
     while True:
